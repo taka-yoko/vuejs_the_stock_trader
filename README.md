@@ -29,7 +29,12 @@ UdemyのVue JS - The Complete GuideのSection18 Final Project - The Stock Trader
 「スプレッド演算子 (spread operator)」を使うため、babelをインストール
 $ npm install --save-dev babel-preset-stage-2
 
+まず現状で考えつくコンポーネントの作成と、ルーティングの設定を行っていく。
+
 ## Creating the First Components
+
+考えつくコンポーネントを作成。
+この段階ではtemplateに表示確認用の文字を暫定的に入れておく。
 
 ## Setup Project Routes
 
