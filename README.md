@@ -98,7 +98,30 @@ https://getbootstrap.com/docs/3.3/components/#navbar
 
 ## Planning the Next Steps
 
+次に実装するcomponentを考える。
+はStocks componentを作成することにする。
+
+- stockをグリッド表示する
+- stock名と現在の価格を表示
+- inputフィールドとbuyボタンを実装。inputフィールドが空でなく、有効な数字であればユーザーはstockを買うことができる。
+
 ## Creating Stocks Components
+
+Stocks.vueにダミーのdataを用意して、v-forで配列分のStockを作成
+
+```javascript
+data() {
+  return {
+    stocks: [
+      { id: 1, name: 'BMW', price: 110 },
+      { id: 2, name: 'Google', price: 200},
+      { id: 3, name: 'Apple', price: 250},
+      { id: 4, name: 'Twitter', price: 8},
+    ]
+  }
+},
+```
+
 
 ## Adding a "Buy" Button
 
