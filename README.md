@@ -144,7 +144,38 @@ id, price, quantityをorderオブジェクトとしてまとめる。
   }
 ```
 
+無効な数字が入っているときは、buy buttonを無効にする
+※v-modelに.numberをつけないと、文字列とみなされて、 Number.isIntegerですべて無効、と判断されてしまう。
+
+```html
+<input
+  type="number"
+  class="form-control"
+  placeholder="Quantity"
+  v-model.number="quantity">
+
+<button
+  class="btn btn-success"
+  @click="buyStock"
+  :disabled="!isValidNumber"
+  >Buy</button>
+```
+
+```javascript
+computed: {
+    isValidNumber() {
+      return Number.isInteger(this.quantity) && this.quantity > 0;
+    }
+  },
+```
+
 ## Setting up the Vuex State Management
+
+vuexをインストール
+Storeの設定
+main.jsでstore読み込み
+Storeでdataの初期設定を行う。
+App.vueのcreatedでaction呼び出し
 
 ## Adding a Portfolio Module to Vuex
 
