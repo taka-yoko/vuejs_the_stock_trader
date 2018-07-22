@@ -172,14 +172,17 @@ computed: {
 ## Setting up the Vuex State Management
 
 vuexをインストール
-Storeの設定
+Storeの設定(Stocks側)
 main.jsでstore読み込み
 Storeでdataの初期設定を行う。
 App.vueのcreatedでaction呼び出し
 
 ## Adding a Portfolio Module to Vuex
 
+Storeの設定(Portfolio側)
+
 ## Working on the Portfolio Stocks
+
 
 ## Connecting the Portfolio with Vuex
 
