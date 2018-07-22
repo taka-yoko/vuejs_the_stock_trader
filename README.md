@@ -122,8 +122,27 @@ data() {
 },
 ```
 
-
 ## Adding a "Buy" Button
+
+Stocks componentからStock componentへstockデータを
+送る。
+Stock componentのpropsで受け取ったデータを表示。
+Stock componentのbuy buttonのイベント設定。
+id, price, quantityをorderオブジェクトとしてまとめる。
+ここではとりあえずconsole.logで表示まで。
+
+```javascript
+  methods: {
+    buyStock() {
+      const order = {
+        stockId: this.stock.id,
+        stockPrice: this.stock.price,
+        quantity: this.quantity
+      }
+      console.log(order);
+    }
+  }
+```
 
 ## Setting up the Vuex State Management
 
