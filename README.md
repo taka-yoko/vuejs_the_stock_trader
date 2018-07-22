@@ -81,6 +81,21 @@ App.vueのtemplateでrouter-viewタグを記述。
 
 ## Adding a Header and Navigation
 
+ヘッダの作成。
+bootstrapの設定を利用
+https://getbootstrap.com/docs/3.3/components/#navbar
+
+必要な所だけを抽出。サイト内リンクは、前章で設定したvue-routerのものを
+使用。
+タグとクラス名をbootstrapのルールに沿うようにする。
+
+```html
+<ul class="nav navbar-nav">
+  <router-link to="/portfolio" activeClass="active" tag="li"><a>Portfolio</a></router-link>
+  <router-link to="/stocks" activeClass="active" tag="li"><a>Stocks</a></router-link>
+</ul>
+```
+
 ## Planning the Next Steps
 
 ## Creating Stocks Components
