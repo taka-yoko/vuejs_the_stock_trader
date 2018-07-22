@@ -38,6 +38,47 @@ $ npm install --save-dev babel-preset-stage-2
 
 ## Setup Project Routes
 
+vue-routerインストール
+$ npm i --save vue-router
+
+src直下にroutes.js作成。ルーティングの設定を行う。
+
+```javascript
+//import .... 各コンポーネントファイルをimport
+
+export const routes = [
+  { path: '/', component: Home },
+  { path: '/portfolio', component: Portfolio },
+  { path: '/stocks', component: Stocks }
+];
+```
+
+main.jsで読み込む
+
+```javascript
+const router = new VueRouter({
+  mode: 'history',
+  routes
+});
+```
+
+App.vueのtemplateでrouter-viewタグを記述。
+
+```html
+<template>
+    <div class="container">
+        <router-view></router-view>
+    </div>
+</template>
+```
+
+ローカルで以下のページにアクセス。ルーティング設定が
+効いていることがわかる。
+
+- http://localhost:8080/
+- http://localhost:8080/portfolio
+- http://localhost:8080/stocks
+
 ## Adding a Header and Navigation
 
 ## Planning the Next Steps
