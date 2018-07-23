@@ -192,7 +192,14 @@ sellStock Actionとmethodの名前が重複していた所を修正
 
 ## Displaying the Funds
 
+fundsの表示。HomeとHeaderに表示する。
+
 ## Adding some Order Checks
+
+- stock購入数の合計金額が、所持金を超えるとボタンが押せなくなる設定
+- stock売却数が、所持したstock数を超えるとボタンが押せなくなる設定
+
+いずれもcomputedに設定を追加する。
 
 ## Making Funds Look Nicer with Filters
 
