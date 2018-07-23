@@ -213,6 +213,30 @@ Vue.filter('currency', (value) => {
 
 ## Ending the Day - Randomizing Stocks
 
+stock priceをランダムに変更する。
+headerのEnd Dayをクリックすることでpriceが更新されるようにする。
+
+```javascript
+//Header.vue
+methods: {
+  ...mapActions([
+      'randomizeStocks'
+  ]),
+  endDay() {
+    this.randomizeStocks();
+  }
+}
+```
+
+```javascript
+//modules/stocks.js
+'RND_STOCKS' (state) {
+  state.stocks.forEach(stock => {
+    stock.price = Math.round(stock.price * (1 + Math.random() - 0.5));
+  });
+}
+```
+
 ## Animating the Route Transitions
 
 ## Saving &amp; Fetching Data - Adding a Dropdown
