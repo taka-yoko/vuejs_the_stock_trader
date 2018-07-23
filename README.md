@@ -183,10 +183,12 @@ Storeの設定(Portfolio側)
 
 ## Working on the Portfolio Stocks
 
-
 ## Connecting the Portfolio with Vuex
 
 ## Time to fix some Errors
+
+src/components/portfolio/Stock.vue の
+sellStock Actionとmethodの名前が重複していた所を修正
 
 ## Displaying the Funds
 
