@@ -203,6 +203,14 @@ fundsの表示。HomeとHeaderに表示する。
 
 ## Making Funds Look Nicer with Filters
 
+globalフィルターを作成し、各コンポーネントで使用。
+
+```javascript
+Vue.filter('currency', (value) => {
+  return `$${value.toLocaleString()}`
+});
+```
+
 ## Ending the Day - Randomizing Stocks
 
 ## Animating the Route Transitions
