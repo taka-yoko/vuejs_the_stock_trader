@@ -315,12 +315,50 @@ toggleDropdown() {
 
 動画だとvue-resourceだが、ここはaxiosを使うことにする
 
+## Saving Data (PUT Request)
+
 src/api/async_api.jsにaxiosでfirebaseからデータの取得、更新
 するメソッドを記述。
 
-## Saving Data (PUT Request)
-
 ## Fetching Data (GET Request)
+
+firebaseからデータを取得。
+async_api.jsにaxiosのgetメソッドを追加。
+
+```javascript
+getData() {
+  axios.get(API_URI + "data.json");
+}
+```
+
+actions.jsを新たに作成。loadDataボタンを押したときに
+データを取得するアクションを記述。
+非同期処理はアクションに記載して、取得したデータをmutationにcommitで渡す。
+
+```javascript
+import AsyncAPI from '../api/async_api.js';
+
+export const loadData = ({commit}) => {
+  AsyncAPI.getData()
+    .then(responce => {
+      const data = response.json();
+
+      if(data) {
+        const stocks = data.stocks;
+        const funds = data.funds;
+        const stockPortfolio = data.stockPortfolio;
+
+        const portfolio = {
+          funds,
+          stockPortfolio
+        };
+
+        commit('SET_STOCKS', stocks);
+        commit('SET_PORTFOLIO', portfolio);
+      }
+    });
+};
+```
 
 ## Testing and Bug Fixes
 
