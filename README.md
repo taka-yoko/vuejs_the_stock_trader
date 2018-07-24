@@ -315,6 +315,9 @@ toggleDropdown() {
 
 動画だとvue-resourceだが、ここはaxiosを使うことにする
 
+src/api/async_api.jsにaxiosでfirebaseからデータの取得、更新
+するメソッドを記述。
+
 ## Saving Data (PUT Request)
 
 ## Fetching Data (GET Request)
