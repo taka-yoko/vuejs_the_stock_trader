@@ -313,6 +313,8 @@ toggleDropdown() {
 
 ## Setting up vue-resource and Firebase
 
+動画だとvue-resourceだが、ここはaxiosを使うことにする
+
 ## Saving Data (PUT Request)
 
 ## Fetching Data (GET Request)
