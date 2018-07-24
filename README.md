@@ -239,6 +239,48 @@ methods: {
 
 ## Animating the Route Transitions
 
+各コンポーネントの表示・非表示の際にアニメーションするように設定
+
+```html
+<transition name="slide" mode="out-in">
+    <router-view></router-view>
+</transition>
+```
+
+この辺りはcss3の設定の話
+
+```css
+<style scoped>
+    .slide-enter-active {
+        animation: slide-in 200ms ease-out forwards;
+    }
+    .slide-leave-active {
+        animation: slide-out 200ms ease-out forwards;
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-out {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+    }
+</style>
+```
+
 ## Saving &amp; Fetching Data - Adding a Dropdown
 
 ## Setting up vue-resource and Firebase
@@ -253,5 +295,4 @@ methods: {
 
 ## Bonus: Debugging Vuex with Vue Developer Tools
 
-## Module Resources &amp; Useful Links
 
