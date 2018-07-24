@@ -283,6 +283,34 @@ methods: {
 
 ## Saving &amp; Fetching Data - Adding a Dropdown
 
+ヘッダーのdropdownリストを有効にする。
+bootstrapの機能で、 class="dropdown"にopenを追加すると、
+下にあるdropdown-menuが表示される。
+
+```javascript
+<li
+    class="dropdown"
+    :class="{ open: isShow }">
+...
+<ul class="dropdown-menu">
+    <li><a href="#">Save Data</a></li>
+    <li><a href="#">Load Data</a></li>
+  </ul>
+```
+
+Save&LoadのテキストクリックでtoggleDropdownメソッドが発動する。
+toggleDropdownではisShowをtrue, falseでtoggleする。
+
+```html
+@click.prevent="toggleDropdown">Save & Load<span class="caret"></span></a>
+```
+
+```javascript
+toggleDropdown() {
+  this.isShow = !this.isShow;
+}
+```
+
 ## Setting up vue-resource and Firebase
 
 ## Saving Data (PUT Request)

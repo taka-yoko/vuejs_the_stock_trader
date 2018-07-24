@@ -14,14 +14,17 @@
       <strong class="navbar-text navbar-right">Funds: {{ funds | currency }}</strong>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" @click="endDay">End Day</a></li>
-        <li class="dropdown">
+        <li
+            class="dropdown"
+            :class="{ open: isShow }">
           <a
             href="#"
             class="dropdown-toggle"
             data-toggle="dropdown"
             role="button"
             aria-haspopup="true"
-            aria-expanded="false">Save & Load<span class="caret"></span></a>
+            aria-expanded="false"
+            @click.prevent="toggleDropdown">Save & Load<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Save Data</a></li>
             <li><a href="#">Load Data</a></li>
@@ -33,10 +36,22 @@
 </nav>
 </template>
 
+<style scoped>
+  .show {
+    display: block;
+  }
+</style>
+
+
 <script>
 import {mapActions} from 'vuex';
 
 export default {
+  data () {
+    return {
+      isShow: false
+    }
+  },
   computed: {
     funds () {
       return this.$store.getters.funds;
@@ -48,6 +63,9 @@ export default {
     ]),
     endDay() {
       this.randomizeStocks();
+    },
+    toggleDropdown() {
+      this.isShow = !this.isShow;
     }
   }
 }
