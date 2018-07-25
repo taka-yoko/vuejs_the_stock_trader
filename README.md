@@ -407,4 +407,5 @@ export default new Vuex.Store({
 
 ## Bonus: Debugging Vuex with Vue Developer Tools
 
-
+Vue developer toolを使うと、デバッグが楽になる。
+mutation（stateの変更）の詳細、取り消しなどが可能になる。
