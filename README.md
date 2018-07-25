@@ -394,6 +394,17 @@ export default new Vuex.Store({
 
 ## Project Wrap Up
 
+このchapterで使ったもの
+- animation
+- routing
+- vuex
+- if statements
+- lists
+- conditionals
+
+このchapterでやらなかったこと
+- nested routes
+
 ## Bonus: Debugging Vuex with Vue Developer Tools
 
 
