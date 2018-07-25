@@ -59,9 +59,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-        'randomizeStocks'
-    ]),
+    ...mapActions({
+        randomizeStocks: 'randomizeStocks',
+        fetchData: 'loadData'
+    }),
     endDay() {
       this.randomizeStocks();
     },
@@ -77,7 +78,7 @@ export default {
       AsyncAPI.putData(data);
     },
     loadData() {
-
+      this.fetchData();
     }
   }
 }

@@ -6,6 +6,6 @@ export default {
     axios.put(API_URI + "data.json", data);
   },
   getData() {
-    axios.get(API_URI + "data.json");
+    return axios.get(API_URI + "data.json");
   }
 };

@@ -362,6 +362,36 @@ export const loadData = ({commit}) => {
 
 ## Testing and Bug Fixes
 
+loadDataボタン押下後、firebaseからデータを取得。
+actionメソッド（mapActions使用）
+
+```javascript
+...mapActions({
+    randomizeStocks: 'randomizeStocks',
+    fetchData: 'loadData'
+}),
+
+loadData() {
+  this.fetchData();
+}
+```
+
+actionメソッドをstoreに登録。
+
+```javascript
+import * as actions from './actions';
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+  actions,
+  modules: {
+    stocks,
+    portfolio
+  }
+});
+```
+
 ## Project Wrap Up
 
 ## Bonus: Debugging Vuex with Vue Developer Tools

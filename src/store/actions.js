@@ -2,8 +2,8 @@ import AsyncAPI from '../api/async_api.js';
 
 export const loadData = ({commit}) => {
   AsyncAPI.getData()
-    .then(responce => {
-      const data = response.json();
+    .then(response => {
+      const data = response.data;
 
       if(data) {
         const stocks = data.stocks;
